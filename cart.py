@@ -16,3 +16,31 @@ Example Usage:
     cart.remove_item("Shirt", 1)
     print(cart.calculate_total())  # 5000
 """
+class ShoppingCart:
+  def __init__(self):
+    self.cart = {}
+
+  def add_items(self,item,price):
+    self.cart[item] = price
+    print(f"{item} added to the cart at price {price}")
+
+  def remove_items(self,item):
+    if item in self.cart:
+      del self.cart[item]
+      print(f"{item} remove succesfully")
+    else:
+      print(f"{item} not found in cart")
+
+  def total_price(self):
+    total = sum(self.cart.values())
+    print(f"total price is {total}")
+    return total
+  def clear(self):
+    self.cart.clear()
+    print(f"empty cart")
+
+cart = ShoppingCart()
+cart.add_items("shirt",7000)
+cart.add_items("laptop",100000)
+cart.remove_items("shirt")
+print(cart.add_items("phone",7000))
