@@ -22,3 +22,15 @@ Example Usage:
     favour_store.remove_item("Milk", 40)
     print(treasure_store.show_inventory())  # {"Milk": 10, "Garri": 30}
 """
+class Inventory:
+  def __init__(self):
+
+    self.shoop = {}
+
+  def add_items(self,item,quantity):
+    if item not in self.shoop:
+      self.shoop[item] = quantity
+    else:
+      self.shoop.update({item:quantity})
+shopping = Inventory()
+add_items()

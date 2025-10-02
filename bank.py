@@ -22,19 +22,20 @@ class BankAccont:
   def deposit(self,amount):
     if amount > 0:
       self.balance += amount
-      print(f"your acct {self.account_number} has been credited with {amount} and your new account balace is {self.balance}")
+      print(f"dear {self.name} your acct {self.account_number} has been credited with {amount} and your new account balace is {self.balance}")
     else:
       print("invalid amount must be > 0 naira")
-  
+
   def withdraw(self,amount):
     if amount > self.balance:
       print(f"insufficient balance")
     else:
       self.balance - amount
-      print(f"your account has beed debted with {amount} and your new acct/balance: {self.balance - amount}")
+      print(f"dear {self.name} your account has beed debted with {amount} and your new acct/balance: {self.balance - amount}")
   
   def check_balance(self,):
     return self.balance
+
   
   
 
@@ -42,7 +43,10 @@ jibrin = BankAccont("jibrin tanimu",1111,)
 godiya = BankAccont("godiya joshua",1112)
 oklo = BankAccont("Oklo yakubu",1123)
 victor = BankAccont("victor jatau",1234)
-mon = godiya.deposit(3000)
-tue = oklo.deposit(1000)
-wed = victor.deposit(3000)
-print(wed)
+vincent = BankAccont("vincent sati",72344)
+vincent.deposit(30000)
+vincent.deposit(50000)
+print(oklo.check_balance())
+print(vincent.check_balance())
+vincent.withdraw(30000)
+
